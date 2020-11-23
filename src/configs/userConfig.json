@@ -1,0 +1,23 @@
+{
+  "firstName": "Ted",
+  "lastName": "Ideborg",
+  "location": { "city": "Stockholm", "country": "Sweden" },
+  "image": "",
+  "socialMedia": [
+    { "type": "twitter", "url": "@twitter" },
+    { "type": "facebook", "url": "facebook" },
+    { "type": "website", "url": "www.website.com" }
+  ],
+  "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepesimilique provident,dignissimos inventore mollitia, culpa, enimquibusdam illum itaque natus neque quae. Atque officia ut ea eiusaut molestiae et. Lorem ipsum dolor sit amet consectetur",
+  "data": {
+    "ratings": 0,
+    "reviews": 0,
+    "friends": 0,
+    "signupDate": "",
+    "books": {
+      "booksRead": [],
+      "wantToRead": [],
+      "bookShelves": []
+    }
+  }
+}
