@@ -48,7 +48,7 @@
     </base-card>
     <template v-slot:aside>
       <h4>About the author</h4>
-      <base-card margin="0 0 20px 0">{{ bookDetails.authors }}</base-card>
+      <base-card margin="0 0 20px 0">{{ authors }}</base-card>
     </template>
   </base-content>
 </template>
@@ -66,6 +66,16 @@ export default {
   computed: {
     bookDetails() {
       return this.$store.getters["bookDetails"];
+    },
+    authors() {
+      let authors = "";
+      this.bookDetails.authors.forEach((author) => {
+        authors += author;
+        if (this.bookDetails.authors.length > 1) {
+          authors += ", ";
+        }
+      });
+      return authors;
     },
   },
   created() {

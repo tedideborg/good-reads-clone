@@ -29,6 +29,7 @@ export default {
   methods: {
     submitSearch() {
       this.$store.dispatch("getBooks", this.searchInput);
+      this.$router.push("/");
     },
   },
 };
