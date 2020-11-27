@@ -56,6 +56,7 @@
 <script>
 import StarsRating from "../components/books/StarsRating";
 import WantToReadButton from "../components/books/WantToReadButton";
+import { getAuthors } from "../utils/getAuthors";
 
 export default {
   props: ["bookId"],
@@ -68,14 +69,7 @@ export default {
       return this.$store.getters["bookDetails"];
     },
     authors() {
-      let authors = "";
-      this.bookDetails.authors.forEach((author) => {
-        authors += author;
-        if (this.bookDetails.authors.length > 1) {
-          authors += ", ";
-        }
-      });
-      return authors;
+      return getAuthors(this.bookDetails.authors);
     },
   },
   created() {

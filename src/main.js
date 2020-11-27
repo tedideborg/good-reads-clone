@@ -17,4 +17,8 @@ app.component("base-card", BaseCard);
 app.component("base-button", BaseButton);
 app.component("base-content", BaseContentArea);
 
+if (window.Cypress) {
+  window.__store__ = store;
+}
+
 app.mount("#app");

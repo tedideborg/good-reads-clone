@@ -41,10 +41,7 @@ const store = createStore({
             book.volumeInfo.imageLinks.smallThumbnail,
           title: book.volumeInfo.title,
           desc: book.volumeInfo.description,
-          author:
-            book.volumeInfo.authors &&
-            book.volumeInfo.authors[0] &&
-            book.volumeInfo.authors[0],
+          authors: book.volumeInfo.authors && book.volumeInfo.authors,
           rating: book.volumeInfo.averageRating,
           id: book.id,
         });
