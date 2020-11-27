@@ -7,7 +7,7 @@
       :img="book.img"
       :title="book.title"
       :desc="book.desc"
-      :author="book.author"
+      :authors="book.authors"
       :rating="book.rating"
     />
   </ul>

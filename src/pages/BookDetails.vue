@@ -48,7 +48,7 @@
     </base-card>
     <template v-slot:aside>
       <h4>About the author</h4>
-      <base-card margin="0 0 20px 0">{{ bookDetails.authors }}</base-card>
+      <base-card margin="0 0 20px 0">{{ authors }}</base-card>
     </template>
   </base-content>
 </template>
@@ -56,6 +56,7 @@
 <script>
 import StarsRating from "../components/books/StarsRating";
 import WantToReadButton from "../components/books/WantToReadButton";
+import { getAuthors } from "../utils/getAuthors";
 
 export default {
   props: ["bookId"],
@@ -66,6 +67,9 @@ export default {
   computed: {
     bookDetails() {
       return this.$store.getters["bookDetails"];
+    },
+    authors() {
+      return getAuthors(this.bookDetails.authors);
     },
   },
   created() {

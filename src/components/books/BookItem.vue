@@ -7,11 +7,11 @@
         /></router-link>
         <section>
           <h2>{{ title }}</h2>
-          <h3>by {{ author }}</h3>
+          <h3>by {{ strAuthors }}</h3>
           <p>{{ desc }}</p>
           <div class="bottom-section">
             <WantToReadButton
-              @click="addBook({ img, id, title, author, desc, rating })"
+              @click="addBook({ img, id, title, authors, desc, rating })"
             />
             <p>rating</p>
             <StarsRaing :rating="rating" />
@@ -25,13 +25,14 @@
 <script>
 import StarsRaing from "./StarsRating";
 import WantToReadButton from "./WantToReadButton";
+import { getAuthors } from "../../utils/getAuthors";
 
 export default {
   components: {
     StarsRaing,
     WantToReadButton,
   },
-  props: ["id", "img", "title", "desc", "author", "rating"],
+  props: ["id", "img", "title", "desc", "authors", "rating"],
   methods: {
     addBook(book) {
       this.$store.dispatch("addBook", book);
@@ -40,6 +41,9 @@ export default {
   computed: {
     bookDetailsLink() {
       return `/book/${this.id}`;
+    },
+    strAuthors() {
+      return getAuthors(this.authors);
     },
   },
 };

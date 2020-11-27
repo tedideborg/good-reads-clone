@@ -2,7 +2,7 @@
   <nav>
     <h1><span>good</span>reads</h1>
     <form @submit.prevent="submitSearch">
-      <input v-model="searchInput" type="text" />
+      <input v-model="searchInput" type="text" name="bookSeach" />
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
     <!-- <div> -->
@@ -29,6 +29,7 @@ export default {
   methods: {
     submitSearch() {
       this.$store.dispatch("getBooks", this.searchInput);
+      this.$router.push("/");
     },
   },
 };
